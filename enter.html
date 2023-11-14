@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Page</title>
+    <!-- <link rel="stylesheet" a href="enter.css"> -->
+</head>
+
+<body>
+    <h1>
+        <center>Student Result Page</center>
+    </h1>
+
+    <div>
+        <label for="rollNumber">Enter Roll Number:</label>
+
+        <input type="text" id="rollNumber" placeholder="e.g., 1001" style="background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 20px;">
+
+        <button onclick="redirectToPage()">Submit</button>
+    </div>
+
+    <script>
+        function redirectToPage() {
+            const rollNumber = document.getElementById("rollNumber").value;
+
+
+            // Define a mapping of roll numbers to page URLs
+            const rollNumberToPage = {
+                "1002": "1002.html", // Replace with your mappings
+                "1455": "1455.html", // Replace with your mappings
+                "1456": "1456.html", // Replace with your mappings
+                "1457": "1457.html", // Replace with your mappings
+                "MCM2056": "MCM2056.html", // Replace with your mappings
+                "1459": "page3.html", // Replace with your mappings
+                "1450": "page3.html", // Replace with your mappings
+
+                "14561": "page3.html", // Replace with your mappings
+            };
+
+            // Check if the entered roll number has a corresponding page URL
+            if (rollNumberToPage.hasOwnProperty(rollNumber)) {
+                // Redirect to the corresponding page
+                window.location.href = rollNumberToPage[rollNumber];
+            } else {
+                alert("Roll number not found."); // Display an error message if roll number is not found
+            }
+        }
+    </script>
+</body>
+
+</html>
